@@ -1,0 +1,69 @@
+# DNS Reconnaissance Commands
+
+nslookup appibrium.com
+nslookup example.com
+Basic DNS lookup.
+
+dig example.com
+Performs a DNS query and displays detailed DNS information.
+
+dig A example.com
+Queries the IPv4 address record.
+
+dig MX example.com
+Queries mail server records.
+
+dig NS example.com
+Queries authoritative name server records.
+
+dig TXT example.com
+Queries TXT records.
+
+DNS Reconnaissance Commands
+Target: appibrium.com
+
+1. A Record
+dig A appibrium.com
+
+2. AAAA Record
+dig AAAA appibrium.com
+
+3. MX Record
+dig MX appibrium.com
+
+4. NS Record
+dig NS appibrium.com
+
+5. TXT Record
+dig TXT appibrium.com
+
+6. SOA Record
+dig SOA appibrium.com
+
+7. NSLOOKUP A
+nslookup -type=A appibrium.com
+
+8. NSLOOKUP AAAA
+nslookup -type=AAAA appibrium.com
+
+9. NSLOOKUP MX
+nslookup -type=MX appibrium.com
+
+10. NSLOOKUP NS
+nslookup -type=NS appibrium.com
+
+11. NSLOOKUP TXT
+nslookup -type=TXT appibrium.com
+
+12. DNSRecon
+dnsrecon -d appibrium.com
+
+13. DNSenum
+dnsenum appibrium.com
+
+14. Fierce
+fierce --domain appibrium.com
+
+15. DNS Zone Transfer Test
+dig AXFR appibrium.com @blakely.ns.cloudflare.com
+dig AXFR appibrium.com @eugene.ns.cloudflare.com
