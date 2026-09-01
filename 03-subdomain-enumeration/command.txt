@@ -1,0 +1,15 @@
+SUBDOMAIN ENUMERATION COMMANDS
+
+Target: appibrium.com
+
+1. Subfinder
+subfinder -d appibrium.com
+
+2. Save Subfinder results
+subfinder -d appibrium.com -o subdomains.txt
+
+3. HTTP/HTTPS probing
+cat subdomains.txt | httpx-toolkit
+
+4. Amass passive enumeration
+amass enum -passive -d appibrium.com
