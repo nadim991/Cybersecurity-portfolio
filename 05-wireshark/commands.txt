@@ -1,0 +1,20 @@
+# Wireshark Lab Commands
+
+# Check network interfaces
+ip a
+
+# Generate ICMP traffic
+ping -c 4 8.8.8.8
+
+# Generate DNS traffic
+dig example.com
+
+# Start Wireshark
+wireshark
+
+# Wireshark display filters
+
+icmp
+dns
+tcp
+http
