@@ -1,0 +1,32 @@
+# Web Security Enumeration
+
+curl -I http://192.168.196.129
+
+whatweb http://192.168.196.129
+
+curl -i http://192.168.196.129
+
+gobuster dir -u http://192.168.196.129 -w /usr/share/wordlists/dirb/common.txt
+
+curl -X OPTIONS -i http://192.168.196.129/
+
+curl -X OPTIONS -i http://192.168.196.129/dav/
+
+davtest -url http://192.168.196.129/dav/
+
+
+
+
+
+
+curl -I http://192.168.196.129/phpinfo.php
+curl -I http://192.168.196.129/phpMyAdmin/
+curl -I http://192.168.196.129/dav/
+curl -I http://192.168.196.129/dvwa/
+
+
+তারপর browser এ:
+http://192.168.196.129/phpinfo.php
+http://192.168.196.129/phpMyAdmin/
+http://192.168.196.129/dav/
+http://192.168.196.129/dvwa/
