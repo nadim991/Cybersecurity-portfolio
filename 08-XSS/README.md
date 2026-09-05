@@ -1,41 +1,52 @@
-Cross Site Scripting Assessment
-Target: DVWA on Metasploitable2
-Target IP: 192.168.196.129
-Application: Damn Vulnerable Web Application
-Testing Environment: Authorized Local Lab Environment
-Objective
-The objective of this assessment was to identify and demonstrate Cross Site Scripting vulnerabilities in the DVWA application.
-Testing Methodology
-Tested Reflected XSS functionality.
-Tested JavaScript injection through user input.
-Confirmed JavaScript execution using a browser alert.
-Tested Stored XSS functionality.
-Tested the application under different DVWA security levels.
-Documented successful and unsuccessful payload execution.
-Reflected XSS
-The Reflected XSS functionality was tested using the following payload:
-�
-alert('XSS-Nadim')
-The payload was successfully reflected by the application and executed as JavaScript in the browser.
-Result:
-Reflected XSS: Confirmed
-Stored XSS
-The Stored XSS functionality was tested through the comment form.
-The JavaScript payload was submitted as user-controlled content and the stored comment was subsequently viewed again.
-Result:
-Stored XSS: Confirmed if the payload executed when the stored comment was displayed.
-Security Level Testing
-At Low security level, the basic JavaScript payload successfully executed.
-At High security level, the same payload did not execute because the application applied stronger input filtering.
-Impact
-An attacker could potentially execute malicious JavaScript in a victim's browser.
-Depending on the application, successful XSS could lead to session-related attacks, unauthorized actions, phishing, page manipulation, or exposure of sensitive information.
-Remediation
-Use proper output encoding for user-controlled data.
-Validate and sanitize user input.
-Use a strong Content Security Policy.
-Avoid inserting untrusted input directly into HTML.
-Use secure cookie attributes such as HttpOnly and SameSite.
-Evidence
-All testing was performed against the authorized local DVWA and Metasploitable2 lab environment.
-Screenshots are stored in the screenshots directory.
+# Cross-Site Scripting (XSS) Assessment
+
+## Assessment Overview
+
+This project documents the security assessment of Cross-Site Scripting (XSS) vulnerabilities within Damn Vulnerable Web Application (DVWA).
+
+The assessment was conducted in an authorized and isolated local laboratory environment using Metasploitable2.
+
+| Category | Details |
+|---|---|
+| Target Application | Damn Vulnerable Web Application (DVWA) |
+| Target Host | Metasploitable2 |
+| Target IP | `192.168.196.129` |
+| Vulnerability | Cross-Site Scripting (XSS) |
+| Testing Environment | Authorized Local Lab |
+| Testing Type | Web Application Security Assessment |
+
+---
+
+## Objective
+
+The objective of this assessment was to identify, validate, and demonstrate Cross-Site Scripting vulnerabilities within DVWA.
+
+The assessment focused on determining whether user-controlled input could be interpreted and executed as JavaScript by the application.
+
+---
+
+## Testing Methodology
+
+The assessment followed a structured web application security testing approach:
+
+1. Identify XSS testing functionality within DVWA.
+2. Submit controlled JavaScript payloads through user-controlled input fields.
+3. Observe how the application processes and reflects the supplied input.
+4. Validate JavaScript execution in the browser.
+5. Test both Reflected XSS and Stored XSS functionality.
+6. Repeat testing under different DVWA security levels.
+7. Record successful and unsuccessful payload execution.
+8. Document the security impact and recommended remediation.
+
+---
+
+## Reflected XSS
+
+### Test Description
+
+The Reflected XSS functionality was tested by submitting a controlled JavaScript payload through the application's user input.
+
+### Payload
+
+```html
+<script>alert('XSS-Nadim')</script>
